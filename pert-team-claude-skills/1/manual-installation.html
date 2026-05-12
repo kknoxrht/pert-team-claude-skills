@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Manual Installation Guide :: Claude Skills Course - Progress Tracking Demo</title>
+    <link rel="canonical" href="https://kknoxrht.github.io/pert-team-claude-skills/pert-team-claude-skills/1/manual-installation.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="claude-basics/index.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../_/css/vendor/tabs.css">
+    <link rel="stylesheet" href="../../_/css/vendor/collapsible.css">
+    <link rel="stylesheet" href="../../_/css/vendor/reading-time.css">
+    <link rel="stylesheet" href="../../_/css/progress-tracker.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://kknoxrht.github.io/pert-team-claude-skills">Claude Skills Course - Progress Tracking Demo</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="pert-team-claude-skills" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Claude Skills Course - Progress Tracking Demo</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html" data-progress-path="/pert-team-claude-skills/1/index.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Home
+    </a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="manual-installation.html" data-progress-path="/pert-team-claude-skills/1/manual-installation.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Manual Installation Guide
+    </a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="claude-basics/index.html" data-progress-path="/pert-team-claude-skills/1/claude-basics/index.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Introduction to Claude Code
+    </a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="claude-basics/01-getting-started.html" data-progress-path="/pert-team-claude-skills/1/claude-basics/01-getting-started.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Getting Started with Claude Code
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="claude-basics/02-skills-vs-prompts.html" data-progress-path="/pert-team-claude-skills/1/claude-basics/02-skills-vs-prompts.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Skills vs. Conversational Prompts
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="claude-basics/03-working-in-repos.html" data-progress-path="/pert-team-claude-skills/1/claude-basics/03-working-in-repos.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Working in Git Repositories
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="claude-basics/04-effective-prompting.html" data-progress-path="/pert-team-claude-skills/1/claude-basics/04-effective-prompting.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Effective Prompting Techniques
+    </a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="skill-building/index.html" data-progress-path="/pert-team-claude-skills/1/skill-building/index.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Building Claude Skills
+    </a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="skill-building/01-skill-anatomy.html" data-progress-path="/pert-team-claude-skills/1/skill-building/01-skill-anatomy.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Module 1: Skill Anatomy
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="skill-building/02-workflow-design.html" data-progress-path="/pert-team-claude-skills/1/skill-building/02-workflow-design.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Module 2: Workflow Design
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="skill-building/03-token-management.html" data-progress-path="/pert-team-claude-skills/1/skill-building/03-token-management.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Module 3: Token Management
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="skill-building/04-quality-gates.html" data-progress-path="/pert-team-claude-skills/1/skill-building/04-quality-gates.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Module 4: Quality Gates
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="skill-building/05-references-templates.html" data-progress-path="/pert-team-claude-skills/1/skill-building/05-references-templates.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Module 5: References &amp; Templates
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="skill-building/06-real-examples.html" data-progress-path="/pert-team-claude-skills/1/skill-building/06-real-examples.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Module 6: Real Examples
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="skill-building/07-best-practices.html" data-progress-path="/pert-team-claude-skills/1/skill-building/07-best-practices.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Module 7: Best Practices
+    </a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="course-creation/index.html" data-progress-path="/pert-team-claude-skills/1/course-creation/index.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Creating Red Hat QuickCourses
+    </a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="course-creation/01-quickcourse-workflow.html" data-progress-path="/pert-team-claude-skills/1/course-creation/01-quickcourse-workflow.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      The QuickCourse Generation Workflow
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="course-creation/02-content-request-template.html" data-progress-path="/pert-team-claude-skills/1/course-creation/02-content-request-template.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Content Request Template
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="course-creation/03-writing-style-standards.html" data-progress-path="/pert-team-claude-skills/1/course-creation/03-writing-style-standards.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Writing Style Standards
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="course-creation/04-terminology-consistency.html" data-progress-path="/pert-team-claude-skills/1/course-creation/04-terminology-consistency.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Terminology Consistency
+    </a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="course-creation/05-fresh-session-workflow.html" data-progress-path="/pert-team-claude-skills/1/course-creation/05-fresh-session-workflow.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Fresh Session Workflow
+    </a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="appendix/appendix.html" data-progress-path="/pert-team-claude-skills/1/appendix/appendix.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Appendix
+    </a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix/progress-tracking.html" data-progress-path="/pert-team-claude-skills/1/appendix/progress-tracking.html">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      Progress Tracking
+    </a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Claude Skills Course - Progress Tracking Demo</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Claude Skills Course - Progress Tracking Demo</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Claude Skills Course - Progress Tracking Demo</a></li>
+    <li><a href="manual-installation.html">Manual Installation Guide</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Manual Installation Guide</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide walks you through installing the progress tracker manually, without using AI or automation. Follow these steps to add visual progress tracking to your Antora course.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The progress tracker consists of <strong>6 files</strong>: 3 static files you can copy as-is, and 3 dynamic files that need customization based on your project structure.</p>
+</div>
+<div class="sect2">
+<h3 id="_files_summary"><a class="anchor" href="#_files_summary"></a>Files Summary</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">File</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>progress-tracker.js</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅ Static</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Core tracking logic - copy as-is</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>progress-tracker.css</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅ Static</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checkmark styling - copy as-is</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nav-tree.hbs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⚙️ Dynamic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Navigation template - needs your structure</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>footer-scripts.hbs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⚙️ Dynamic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Script loader - may need merging</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>head-styles.hbs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⚙️ Dynamic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSS loader - may need merging</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>progress-tracking.adoc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">✅ Static</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User documentation - copy as-is</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you start, verify your project has:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>✅ Antora 3.x installed</p>
+</li>
+<li>
+<p>✅ <code>antora-playbook.yml</code> with <code>ui.supplemental_files</code> configured</p>
+</li>
+<li>
+<p>✅ <code>package.json</code> with <code>build</code> script</p>
+</li>
+<li>
+<p>✅ A module with navigation (e.g., <code>ROOT</code> or <code>appendix</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_by_step_installation"><a class="anchor" href="#_step_by_step_installation"></a>Step-by-Step Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_step_1_create_directory_structure"><a class="anchor" href="#_step_1_create_directory_structure"></a>Step 1: Create Directory Structure</h3>
+<div class="paragraph">
+<p>Create the supplemental-ui directories if they don&#8217;t exist:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd /path/to/your-antora-course
+
+# Create directories
+mkdir -p supplemental-ui/js
+mkdir -p supplemental-ui/css
+mkdir -p supplemental-ui/partials</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_copy_static_files_no_edits_needed"><a class="anchor" href="#_step_2_copy_static_files_no_edits_needed"></a>Step 2: Copy Static Files (No Edits Needed)</h3>
+<div class="paragraph">
+<p>These files can be copied exactly as-is with no modifications.</p>
+</div>
+<div class="sect3">
+<h4 id="_2_1_copy_javascript_file"><a class="anchor" href="#_2_1_copy_javascript_file"></a>2.1 Copy JavaScript File</h4>
+<div class="paragraph">
+<p><strong>Source:</strong> <code>supplemental-ui/js/progress-tracker.js</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># From this repository to your course:
+cp /path/to/pert-team-claude-skills/supplemental-ui/js/progress-tracker.js \
+   supplemental-ui/js/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>What it does:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reads current page URL on load</p>
+</li>
+<li>
+<p>Stores visited pages in <code>localStorage</code></p>
+</li>
+<li>
+<p>Scans navigation for <code>data-progress-path</code> attributes</p>
+</li>
+<li>
+<p>Shows checkmarks for visited pages</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>No customization needed</strong> - this file works as-is for all Antora courses.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_2_copy_css_file"><a class="anchor" href="#_2_2_copy_css_file"></a>2.2 Copy CSS File</h4>
+<div class="paragraph">
+<p><strong>Source:</strong> <code>supplemental-ui/css/progress-tracker.css</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp /path/to/pert-team-claude-skills/supplemental-ui/css/progress-tracker.css \
+   supplemental-ui/css/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>What it does:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Styles the checkmark icon (green ✓)</p>
+</li>
+<li>
+<p>Handles dark mode</p>
+</li>
+<li>
+<p>Hides checkmarks in print</p>
+</li>
+<li>
+<p>Ensures proper alignment</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>No customization needed</strong> unless you want to change colors or icons.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3_addupdate_dynamic_files"><a class="anchor" href="#_step_3_addupdate_dynamic_files"></a>Step 3: Add/Update Dynamic Files</h3>
+<div class="paragraph">
+<p>These files may need to be created or merged with existing files.</p>
+</div>
+<div class="sect3">
+<h4 id="_3_1_script_loader_footer_scripts_hbs"><a class="anchor" href="#_3_1_script_loader_footer_scripts_hbs"></a>3.1 Script Loader (footer-scripts.hbs)</h4>
+<div class="paragraph">
+<p><strong>Path:</strong> <code>supplemental-ui/partials/footer-scripts.hbs</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Scenario A:</strong> File doesn&#8217;t exist (create it)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">&lt;script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"&gt;&lt;/script&gt;
+&lt;script async src="{{{uiRootPath}}}/js/vendor/highlight.js"&gt;&lt;/script&gt;
+{{#if env.SITE_SEARCH_PROVIDER}}
+{{&gt; search-scripts}}
+{{/if}}
+&lt;script src="{{{uiRootPath}}}/js/progress-tracker.js"&gt;&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scenario B:</strong> File exists (add this line at the end)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">&lt;script src="{{{uiRootPath}}}/js/progress-tracker.js"&gt;&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The script must load <strong>after</strong> the page navigation is rendered.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_2_style_loader_head_styles_hbs"><a class="anchor" href="#_3_2_style_loader_head_styles_hbs"></a>3.2 Style Loader (head-styles.hbs)</h4>
+<div class="paragraph">
+<p><strong>Path:</strong> <code>supplemental-ui/partials/head-styles.hbs</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Scenario A:</strong> File doesn&#8217;t exist (create it)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">    &lt;link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css"&gt;
+    &lt;link rel="stylesheet" href="{{{uiRootPath}}}/css/progress-tracker.css"&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scenario B:</strong> File exists (add this line after other stylesheets)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">    &lt;link rel="stylesheet" href="{{{uiRootPath}}}/css/progress-tracker.css"&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+The spaces at the start are important - maintain proper indentation.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_3_navigation_template_nav_tree_hbs"><a class="anchor" href="#_3_3_navigation_template_nav_tree_hbs"></a>3.3 Navigation Template (nav-tree.hbs)</h4>
+<div class="paragraph">
+<p>This is the <strong>most important</strong> file and requires the most care.</p>
+</div>
+<div class="paragraph">
+<p><strong>Path:</strong> <code>supplemental-ui/partials/nav-tree.hbs</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Check if you have a custom version:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># If this file exists, you have customizations:
+ls -la supplemental-ui/partials/nav-tree.hbs
+
+# Back it up before proceeding:
+cp supplemental-ui/partials/nav-tree.hbs \
+   supplemental-ui/partials/nav-tree.hbs.backup</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scenario A:</strong> No custom nav-tree.hbs (recommended)</p>
+</div>
+<div class="paragraph">
+<p>Copy the template directly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp /path/to/pert-team-claude-skills/supplemental-ui/partials/nav-tree.hbs \
+   supplemental-ui/partials/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Scenario B:</strong> You have a custom nav-tree.hbs</p>
+</div>
+<div class="paragraph">
+<p>You need to merge manually. Add these two elements to your existing template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Add <code>data-progress-path</code> attribute</strong> to the <code>&lt;a&gt;</code> tag:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">&lt;a class="nav-link" href="{{{relativize ./url}}}" data-progress-path="{{{./url}}}"&gt;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Add checkmark span</strong> inside the <code>&lt;a&gt;</code> tag, before <code>{{{./content}}}</code>:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">&lt;a class="nav-link" href="{{{relativize ./url}}}" data-progress-path="{{{./url}}}"&gt;
+  &lt;span class="nav-progress-mark" aria-hidden="true"&gt;✓&lt;/span&gt;
+  {{{./content}}}
+&lt;/a&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Complete reference template:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">{{!-- progress-tracking-installed: v1.0 --}}
+{{#if navigation.length}}
+&lt;ul class="nav-list"&gt;
+  {{#each navigation}}
+  &lt;li class="nav-item{{#if (eq ./url @root.page.url)}} is-current-page{{/if}}" data-depth="{{or ../level 0}}"&gt;
+    {{#if ./content}}
+    {{#if ./items.length}}
+    &lt;button class="nav-item-toggle"&gt;&lt;/button&gt;
+    {{/if}}
+    {{#if ./url}}
+    &lt;a class="nav-link" href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}" data-progress-path="{{{./url}}}"&gt;
+      &lt;span class="nav-progress-mark" aria-hidden="true"&gt;✓&lt;/span&gt;
+      {{{./content}}}
+    &lt;/a&gt;
+    {{else}}
+    &lt;span class="nav-text"&gt;{{{./content}}}&lt;/span&gt;
+    {{/if}}
+    {{/if}}
+{{&gt; nav-tree navigation=./items level=(increment ../level)}}
+  &lt;/li&gt;
+  {{/each}}
+&lt;/ul&gt;
+{{/if}}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4_add_user_documentation_optional"><a class="anchor" href="#_step_4_add_user_documentation_optional"></a>Step 4: Add User Documentation (Optional)</h3>
+<div class="paragraph">
+<p>Copy the documentation page so users know how progress tracking works:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Create appendix module if needed
+mkdir -p modules/appendix/pages
+
+# Copy documentation
+cp /path/to/pert-team-claude-skills/modules/appendix/pages/progress-tracking.adoc \
+   modules/appendix/pages/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Add to navigation:</strong></p>
+</div>
+<div class="paragraph">
+<p>Edit <code>modules/appendix/nav.adoc</code> (or create it):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">* xref:progress-tracking.adoc[Visual Progress Tracking]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_5_verify_supplemental_ui_configuration"><a class="anchor" href="#_step_5_verify_supplemental_ui_configuration"></a>Step 5: Verify Supplemental UI Configuration</h3>
+<div class="paragraph">
+<p>Check your <code>antora-playbook.yml</code> has supplemental files enabled:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cat antora-playbook.yml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Should contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">ui:
+  bundle:
+    url: ./ui-bundle/ui-bundle.zip  # or your UI bundle path
+  supplemental_files: ./supplemental-ui</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If missing, add the <code>supplemental_files</code> line under <code>ui:</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_6_configure_site_url_github_pages"><a class="anchor" href="#_step_6_configure_site_url_github_pages"></a>Step 6: Configure Site URL (GitHub Pages)</h3>
+<div class="paragraph">
+<p>If deploying to GitHub Pages, add the site URL to avoid path issues:</p>
+</div>
+<div class="paragraph">
+<p><strong>Edit:</strong> <code>antora-playbook.yml</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">site:
+  title: Your Course Title
+  url: https://your-org.github.io/your-repo  # Add this line
+  start_page: your-component::index.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace:
+* <code>your-org</code> → your GitHub username or organization
+* <code>your-repo</code> → your repository name</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Without <code>site.url</code>, progress tracking may not work correctly on GitHub Pages.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_7_build_and_test"><a class="anchor" href="#_step_7_build_and_test"></a>Step 7: Build and Test</h3>
+<div class="paragraph">
+<p>Rebuild your Antora site:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run build</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Expected output: No errors, build completes successfully.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_8_serve_locally_and_verify"><a class="anchor" href="#_step_8_serve_locally_and_verify"></a>Step 8: Serve Locally and Verify</h3>
+<div class="paragraph">
+<p>Start a local web server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run serve
+# Or manually:
+npx http-server build/site -c-1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Open browser to <code><a href="http://localhost:8080" class="bare">http://localhost:8080</a></code> (or shown port).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verification_checklist"><a class="anchor" href="#_verification_checklist"></a>Verification Checklist</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open your course in a browser and verify:</p>
+</div>
+<div class="sect2">
+<h3 id="_visual_check"><a class="anchor" href="#_visual_check"></a>✅ Visual Check</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>[ ] Navigation sidebar shows checkmark icons (hidden by default)</p>
+</li>
+<li>
+<p>[ ] Visit a page - checkmark should appear next to that page</p>
+</li>
+<li>
+<p>[ ] Refresh browser - checkmark persists</p>
+</li>
+<li>
+<p>[ ] Visit another page - second checkmark appears</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_browser_console_check"><a class="anchor" href="#_browser_console_check"></a>✅ Browser Console Check</h3>
+<div class="paragraph">
+<p>Open Developer Tools (F12) → Console tab.</p>
+</div>
+<div class="paragraph">
+<p>Should see:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Progress tracker initialized. Run debugCourseProgress() for details.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>No errors should appear.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_localstorage_check"><a class="anchor" href="#_localstorage_check"></a>✅ LocalStorage Check</h3>
+<div class="paragraph">
+<p>In Developer Tools:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Application</strong> tab (Chrome) or <strong>Storage</strong> tab (Firefox)</p>
+</li>
+<li>
+<p>Expand <strong>Local Storage</strong></p>
+</li>
+<li>
+<p>Click your site URL</p>
+</li>
+<li>
+<p>Should see key: <code>antora-course-progress</code></p>
+</li>
+<li>
+<p>Value should be JSON array: <code>["/path/page1.html", "/path/page2.html"]</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_html_inspection_check"><a class="anchor" href="#_html_inspection_check"></a>✅ HTML Inspection Check</h3>
+<div class="paragraph">
+<p>In Developer Tools → Elements:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Find navigation <code>&lt;a&gt;</code> tags</p>
+</li>
+<li>
+<p>Should have attribute: <code>data-progress-path="/path/to/page.html"</code></p>
+</li>
+<li>
+<p>Should contain: <code>&lt;span class="nav-progress-mark"&gt;✓&lt;/span&gt;</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_debug_command_check"><a class="anchor" href="#_debug_command_check"></a>✅ Debug Command Check</h3>
+<div class="paragraph">
+<p>In browser console, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">debugCourseProgress()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Should show:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">=== Progress Tracker Debug ===
+Current path: /your-component/1/index.html
+Visited pages: ["/your-component/1/index.html", "/your-component/1/page2.html"]
+Nav links found: 15
+Link 0: {href: "index.html", dataPath: "/your-component/1/index.html", ...}
+...</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_problem_checkmarks_not_appearing"><a class="anchor" href="#_problem_checkmarks_not_appearing"></a>Problem: Checkmarks Not Appearing</h3>
+<div class="paragraph">
+<p><strong>Symptom:</strong> Navigation loads but no checkmarks show up, even after visiting pages.</p>
+</div>
+<div class="paragraph">
+<p><strong>Diagnosis:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// In browser console:
+debugCourseProgress()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check output:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nav links found: 0</strong> → Template issue (nav-tree.hbs not updated)</p>
+</li>
+<li>
+<p><strong>Current path: undefined</strong> → JavaScript error</p>
+</li>
+<li>
+<p><strong>Visited pages: []</strong> → localStorage blocked or JavaScript not loading</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Solutions:</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cause</th>
+<th class="tableblock halign-left valign-top">Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Template not updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verify <code>nav-tree.hbs</code> has <code>data-progress-path</code> attribute</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JavaScript not loading</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check browser console for 404 errors, verify script tag in footer-scripts.hbs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LocalStorage blocked</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check browser privacy settings, test in incognito mode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wrong paths</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check <code>site.url</code> in antora-playbook.yml matches your deployment URL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_problem_build_fails"><a class="anchor" href="#_problem_build_fails"></a>Problem: Build Fails</h3>
+<div class="paragraph">
+<p><strong>Error:</strong> <code>Cannot find partial 'nav-tree'</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Solution:</strong> Make sure <code>nav-tree.hbs</code> is in <code>supplemental-ui/partials/</code> directory.</p>
+</div>
+<div class="paragraph">
+<p><strong>Error:</strong> <code>ENOENT: no such file or directory</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Solution:</strong> Verify all file paths are correct and directories exist.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_problem_checkmarks_disappear_after_refresh"><a class="anchor" href="#_problem_checkmarks_disappear_after_refresh"></a>Problem: Checkmarks Disappear After Refresh</h3>
+<div class="paragraph">
+<p><strong>Symptom:</strong> Checkmarks show briefly, then vanish.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cause:</strong> Path mismatch between stored paths and navigation paths.</p>
+</div>
+<div class="paragraph">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clear localStorage: <code>clearCourseProgress()</code></p>
+</li>
+<li>
+<p>Check paths in debug: <code>debugCourseProgress()</code></p>
+</li>
+<li>
+<p>Ensure <code>site.url</code> in playbook matches deployment URL</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_problem_works_locally_not_on_github_pages"><a class="anchor" href="#_problem_works_locally_not_on_github_pages"></a>Problem: Works Locally, Not on GitHub Pages</h3>
+<div class="paragraph">
+<p><strong>Symptom:</strong> Progress tracking works with <code>npm run serve</code> but not on deployed site.</p>
+</div>
+<div class="paragraph">
+<p><strong>Cause:</strong> Missing or incorrect <code>site.url</code> configuration.</p>
+</div>
+<div class="paragraph">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="paragraph">
+<p>Edit <code>antora-playbook.yml</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">site:
+  url: https://your-org.github.io/your-repo  # Must match GitHub Pages URL</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Rebuild and redeploy.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_reference"><a class="anchor" href="#_file_reference"></a>File Reference</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_complete_file_tree"><a class="anchor" href="#_complete_file_tree"></a>Complete File Tree</h3>
+<div class="paragraph">
+<p>After installation, your project should have:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">your-antora-course/
+├── antora-playbook.yml              # ⚙️ Add site.url
+├── package.json
+├── supplemental-ui/
+│   ├── js/
+│   │   └── progress-tracker.js      # ✅ Copy as-is
+│   ├── css/
+│   │   └── progress-tracker.css     # ✅ Copy as-is
+│   └── partials/
+│       ├── nav-tree.hbs             # ⚙️ Update or copy
+│       ├── footer-scripts.hbs       # ⚙️ Add script tag
+│       └── head-styles.hbs          # ⚙️ Add CSS link
+└── modules/
+    └── appendix/
+        ├── nav.adoc                 # ⚙️ Add link to docs
+        └── pages/
+            └── progress-tracking.adoc  # ✅ Copy as-is</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_file_checksums_verification"><a class="anchor" href="#_file_checksums_verification"></a>File Checksums (Verification)</h3>
+<div class="paragraph">
+<p>To verify you have the correct files, check file sizes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ls -lh supplemental-ui/js/progress-tracker.js
+# Should be approximately 4.3 KB
+
+ls -lh supplemental-ui/css/progress-tracker.css
+# Should be approximately 1.2 KB
+
+ls -lh supplemental-ui/partials/nav-tree.hbs
+# Should be approximately 800 bytes</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_customization_after_installation"><a class="anchor" href="#_customization_after_installation"></a>Customization After Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_change_checkmark_color"><a class="anchor" href="#_change_checkmark_color"></a>Change Checkmark Color</h3>
+<div class="paragraph">
+<p>Edit <code>supplemental-ui/css/progress-tracker.css</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-css hljs" data-lang="css">.nav-progress-mark {
+  color: #0066cc; /* Change to blue, for example */
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .nav-progress-mark {
+    color: #66b3ff; /* Lighter blue for dark mode */
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_change_checkmark_icon"><a class="anchor" href="#_change_checkmark_icon"></a>Change Checkmark Icon</h3>
+<div class="paragraph">
+<p>Edit <code>supplemental-ui/partials/nav-tree.hbs</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-handlebars hljs" data-lang="handlebars">&lt;!-- Change from ✓ to another icon: --&gt;
+&lt;span class="nav-progress-mark" aria-hidden="true"&gt;🎯&lt;/span&gt;
+&lt;!-- or --&gt;
+&lt;span class="nav-progress-mark" aria-hidden="true"&gt;✔&lt;/span&gt;
+&lt;!-- or --&gt;
+&lt;span class="nav-progress-mark" aria-hidden="true"&gt;★&lt;/span&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Popular icons:</strong> ✓ ✔ ★ 🎯 🟢 ☑ ✅</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clear_all_progress_testing"><a class="anchor" href="#_clear_all_progress_testing"></a>Clear All Progress (Testing)</h3>
+<div class="paragraph">
+<p>For testing or demonstrations, clear all progress data:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// In browser console:
+clearCourseProgress()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This removes all visited pages from localStorage and reloads the page.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_maintenance"><a class="anchor" href="#_maintenance"></a>Maintenance</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_updating_to_new_version"><a class="anchor" href="#_updating_to_new_version"></a>Updating to New Version</h3>
+<div class="paragraph">
+<p>When a new version is released:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Backup current files:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp supplemental-ui/js/progress-tracker.js supplemental-ui/js/progress-tracker.js.old
+cp supplemental-ui/css/progress-tracker.css supplemental-ui/css/progress-tracker.css.old</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Copy new files</strong> (repeat Step 2 from installation)</p>
+</li>
+<li>
+<p><strong>Rebuild:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run build</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Test thoroughly</strong> before deploying</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_removing_progress_tracking"><a class="anchor" href="#_removing_progress_tracking"></a>Removing Progress Tracking</h3>
+<div class="paragraph">
+<p>To completely remove progress tracking:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Delete files:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">rm supplemental-ui/js/progress-tracker.js
+rm supplemental-ui/css/progress-tracker.css
+rm supplemental-ui/partials/nav-tree.hbs
+rm supplemental-ui/partials/footer-scripts.hbs  # If only used for progress tracker
+rm supplemental-ui/partials/head-styles.hbs     # If only used for progress tracker</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Restore original nav-tree.hbs</strong> (if you backed it up):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp supplemental-ui/partials/nav-tree.hbs.backup \
+   supplemental-ui/partials/nav-tree.hbs</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Remove documentation link</strong> from <code>modules/appendix/nav.adoc</code></p>
+</li>
+<li>
+<p><strong>Rebuild:</strong></p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run build</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_support_and_resources"><a class="anchor" href="#_support_and_resources"></a>Support and Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GitHub Repository:</strong> <a href="https://github.com/kknoxrht/pert-team-claude-skills" class="bare">https://github.com/kknoxrht/pert-team-claude-skills</a></p>
+</li>
+<li>
+<p><strong>Live Demo:</strong> <a href="https://kknoxrht.github.io/pert-team-claude-skills/" class="bare">https://kknoxrht.github.io/pert-team-claude-skills/</a></p>
+</li>
+<li>
+<p><strong>Report Issues:</strong> <a href="https://github.com/kknoxrht/pert-team-claude-skills/issues" class="bare">https://github.com/kknoxrht/pert-team-claude-skills/issues</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quick_reference_card"><a class="anchor" href="#_quick_reference_card"></a>Quick Reference Card</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Task</th>
+<th class="tableblock halign-left valign-top">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install JavaScript</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cp progress-tracker.js supplemental-ui/js/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install CSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cp progress-tracker.css supplemental-ui/css/</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update navigation template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit <code>supplemental-ui/partials/nav-tree.hbs</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Build site</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>npm run build</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serve locally</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>npm run serve</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debug in browser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>debugCourseProgress()</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clear progress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clearCourseProgress()</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check localStorage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">F12 → Application → Local Storage</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="paragraph">
+<p><strong>This manual process gives you full control over the installation. No AI required - just follow the steps and you&#8217;ll have working progress tracking!</strong></p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Home</a></span>
+  <span class="next"><a href="claude-basics/index.html">Introduction to Claude Code</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script defer src="../../_/js/vendor/tabs.js"></script>
+<script defer src="../../_/js/vendor/reading-time.js"></script>
+<script src="../../_/js/progress-tracker.js"></script>
+  </body>
+</html>
