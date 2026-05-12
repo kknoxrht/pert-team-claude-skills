@@ -110,6 +110,32 @@
   }
 
   /**
+   * Debug function to log tracking state
+   */
+  function debugProgress() {
+    var currentPath = normalizePath(window.location.pathname)
+    var visited = getVisitedPages()
+    var navLinks = document.querySelectorAll('.nav-link[data-progress-path]')
+
+    console.log('=== Progress Tracker Debug ===')
+    console.log('Current path:', currentPath)
+    console.log('Visited pages:', visited)
+    console.log('Nav links found:', navLinks.length)
+
+    navLinks.forEach(function(link, i) {
+      var linkPath = normalizePath(link.getAttribute('data-progress-path'))
+      var isVisited = visited.indexOf(linkPath) !== -1
+      console.log('Link ' + i + ':', {
+        href: link.getAttribute('href'),
+        dataPath: link.getAttribute('data-progress-path'),
+        normalized: linkPath,
+        isVisited: isVisited,
+        hasClass: link.classList.contains(VISITED_CLASS)
+      })
+    })
+  }
+
+  /**
    * Initialize progress tracker
    */
   function init() {
@@ -127,6 +153,10 @@
 
     // Expose clear function globally (for maintenance/debugging)
     window.clearCourseProgress = clearProgress
+    window.debugCourseProgress = debugProgress
+
+    // Auto-debug on load (can comment out after troubleshooting)
+    console.log('Progress tracker initialized. Run debugCourseProgress() for details.')
   }
 
   // Run on DOMContentLoaded

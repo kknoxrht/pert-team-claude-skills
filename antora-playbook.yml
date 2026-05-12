@@ -1,5 +1,6 @@
 site:
   title: Claude Skills Course - Progress Tracking Demo
+  url: https://kknoxrht.github.io/pert-team-claude-skills
   start_page: pert-team-claude-skills::index.adoc
 
 content:

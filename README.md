@@ -35,7 +35,7 @@ Green checkmarks (✓) appear next to pages as students navigate through your co
 
 ### See It in Action
 
-- 📘 **[View Live Course](https://YOUR-ORG.github.io/pert-team-claude-skills/)** - Browse the example course and watch checkmarks appear
+- 📘 **[View Live Course](https://kknoxrht.github.io/pert-team-claude-skills/)** - Browse the example course and watch checkmarks appear
 - 📖 **[Installation Guide](guide/index.html)** - Step-by-step HTML guide (opens in new window)
 - 🛠️ **[Browse Skill Files](skills/antora-progress-tracking/)** - Inspect the skill package
 
@@ -246,4 +246,4 @@ Created for Red Hat OpenShift AI training courses.
 
 ---
 
-**Ready to add progress tracking to your course?** Browse the [skills folder](skills/antora-progress-tracking/) to get started, or view the [live demo](https://YOUR-ORG.github.io/pert-team-claude-skills/)!
+**Ready to add progress tracking to your course?** Browse the [skills folder](skills/antora-progress-tracking/) to get started, or view the [live demo](https://kknoxrht.github.io/pert-team-claude-skills/)!
