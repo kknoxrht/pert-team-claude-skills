@@ -1,2 +1,2 @@
-* xref:appendix.adoc[]
+* xref:Appendix[]
 ** xref:progress-tracking.adoc[Progress Tracking]
