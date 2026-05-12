@@ -1,27 +1,296 @@
-= An Example Quick Course
+= Progress Tracking Demo Course
 :navtitle: Home
 
-== Introduction
+== Welcome!
 
-Course Title: Course title FIXME
+This repository serves as both a *working demonstration* and a *distribution package* for the Antora Progress Tracking feature. Navigate through the course modules and watch green checkmarks (✓) appear next to pages you've visited!
 
-Description:
-Course description FIXME
+=== What is Progress Tracking?
 
-Duration: FIXME hours
+Progress tracking adds visual indicators to your Antora course navigation, helping students:
 
-== Objectives
+* See which pages they've already visited (✓ checkmark appears)
+* Track their learning progress through the course
+* Resume where they left off across browser sessions
 
-On completing this course, you should be able to:
+**Privacy-first:** All tracking happens client-side using browser localStorage. No data leaves the student's device.
 
-* Observable, measurable objective...
-* Observable, measurable objective...
-* Observable, measurable objective...
+== Course Content
 
-== Prerequisites
+This repository includes a complete course about *Claude Code Skills* to demonstrate progress tracking in action:
 
-This course assumes that you have the following prior experience:
+* **Module 1:** Claude Basics - Introduction to Claude Code fundamentals
+* **Module 2:** Skill Building - Creating and customizing Claude Code skills
+* **Module 3:** Course Creation - Developing training content with Claude
 
-* Course or experience...
-* Course or experience...
-* Course or experience...
+Navigate through these modules to see progress tracking work!
+
+== Installing Progress Tracking
+
+There are two ways to add progress tracking to your courses:
+
+=== Option 1: Clone This Repository
+
+If you want to use this repository as a template for a new course:
+
+[source,bash]
+----
+# 1. Clone this repository
+git clone https://github.com/YOUR-ORG/pert-team-claude-skills.git my-new-course
+cd my-new-course
+
+# 2. Build and serve
+npm install
+npm run build
+npm run serve
+----
+
+**What you get:**
+
+* ✅ Progress tracking already installed and working
+* ✅ Example course structure (replace with your content)
+* ✅ All configuration files pre-configured
+* ✅ UI bundle with progress tracking built-in
+
+**Next steps:**
+
+1. Replace the example modules (`claude-basics`, `skill-building`, `course-creation`) with your own content
+2. Update `antora.yml` with your course title and navigation
+3. Customize `antora-playbook.yml` if needed
+4. Build and deploy!
+
+=== Option 2: Use as Claude Code Skill (Recommended)
+
+To add progress tracking to an *existing* Antora course using Claude Code:
+
+[source,bash]
+----
+# 1. Install the skill in Claude Code
+cd ~/.claude/skills/
+git clone https://github.com/YOUR-ORG/pert-team-claude-skills.git
+# Or copy just the skill folder:
+cp -r /path/to/pert-team-claude-skills/skills/antora-progress-tracking ~/.claude/skills/
+
+# 2. Navigate to your course
+cd /path/to/your-antora-course
+
+# 3. In Claude Code, run:
+/add-progress-tracking
+----
+
+**What the skill does:**
+
+1. ✅ Validates your Antora project structure
+2. ✅ Detects if progress tracking is already installed (safe to re-run)
+3. ✅ Warns if you have custom `nav-tree.hbs` overrides (backs them up)
+4. ✅ Installs 6 files:
+   * `supplemental-ui/partials/nav-tree.hbs` - Navigation template with progress markers
+   * `supplemental-ui/js/progress-tracker.js` - Tracking logic (~150 lines)
+   * `supplemental-ui/css/progress-tracker.css` - Checkmark styling
+   * `supplemental-ui/partials/footer-scripts.hbs` - Script loader
+   * `supplemental-ui/partials/head-styles.hbs` - CSS loader
+   * `modules/appendix/pages/progress-tracking.adoc` - User documentation
+5. ✅ Updates `modules/appendix/nav.adoc` to include documentation link
+6. ✅ Rebuilds your course (`npm run build`)
+7. ✅ Verifies installation
+
+== How It Works
+
+[source,mermaid]
+----
+graph LR
+    A[User visits page] --> B[JavaScript reads URL]
+    B --> C[Updates localStorage]
+    C --> D[Scans navigation]
+    D --> E[Shows ✓ for visited pages]
+----
+
+**Technical details:**
+
+* **Storage:** Browser localStorage (key: `antora-course-progress`)
+* **Data format:** JSON array of visited page URLs
+* **Privacy:** All data stays on user's device
+* **Compatibility:** Works with Antora 3.x supplemental-ui mechanism
+
+== Documentation Resources
+
+=== Quick References
+
+* **link:../../guide/index.html[Installation Guide^]** - Comprehensive HTML guide with step-by-step instructions
+* **link:../../skills/antora-progress-tracking/README.md[Skill Documentation^]** - Technical details and architecture
+* **link:../../skills/antora-progress-tracking/QUICKSTART.md[Quick Start^]** - Fast reference for experienced users
+
+=== In This Repository
+
+* `guide/` - Interactive HTML installation guide (open in browser)
+* `skills/antora-progress-tracking/` - Complete skill package for Claude Code
+* `.agents/skills/` - Example Claude Code skills (14 production skills)
+* `templates/` - Content templates (lab, quiz, presentation formats)
+
+== Uninstalling
+
+To remove progress tracking from a course:
+
+[source,bash]
+----
+cd /path/to/your-course
+
+# In Claude Code:
+/remove-progress-tracking
+----
+
+The uninstall skill will:
+
+1. ✅ Detect installed version
+2. ✅ Restore backup files (if they exist)
+3. ✅ Remove progress tracking files
+4. ✅ Update navigation
+5. ✅ Rebuild and verify
+
+== Customization
+
+=== Change Checkmark Icon
+
+Edit `supplemental-ui/partials/nav-tree.hbs`:
+
+[source,handlebars]
+----
+<!-- Change from: -->
+<span class="nav-progress-mark" aria-hidden="true">✓</span>
+
+<!-- To your icon: -->
+<span class="nav-progress-mark" aria-hidden="true">★</span>
+----
+
+**Icon options:** ✓ (checkmark), ✔ (heavy), ★ (star), 🎯 (target), 🟢 (green circle)
+
+=== Change Colors
+
+Edit `supplemental-ui/css/progress-tracker.css`:
+
+[source,css]
+----
+.nav-progress-mark {
+  color: #00a86b; /* Green - change to your color */
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .nav-progress-mark {
+    color: #4ade80; /* Light green */
+  }
+}
+----
+
+=== Clear Progress (Testing)
+
+Open browser console (F12) and run:
+
+[source,javascript]
+----
+clearCourseProgress()
+----
+
+This removes all progress data from localStorage and reloads the page.
+
+== Requirements
+
+[cols="1,3"]
+|===
+|Requirement |Description
+
+|**Antora 3.x**
+|Static site generator with supplemental-ui support
+
+|**npm build script**
+|Configured in `package.json` (for rebuilding site)
+
+|**Claude Code** (for skill installation)
+|CLI, Desktop, or IDE extension
+
+|**Navigation file**
+|In `appendix` or `ROOT` module (for documentation link)
+|===
+
+== Browser Support
+
+* ✅ Chrome/Edge/Safari/Firefox (latest 2 versions)
+* ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+* ✅ IE11+ (graceful degradation)
+
+== Troubleshooting
+
+=== Checkmarks Not Showing
+
+1. **Check browser console** (F12 → Console) for JavaScript errors
+2. **Verify localStorage** (F12 → Application → Local Storage)
+   * Should see key: `antora-course-progress`
+   * Value: JSON array like `["/path/page1.html", "/path/page2.html"]`
+3. **Inspect navigation links** (F12 → Elements)
+   * Links should have `data-progress-path` attribute
+   * Should contain `<span class="nav-progress-mark">✓</span>`
+
+=== Build Errors
+
+Clear cache and rebuild:
+
+[source,bash]
+----
+rm -rf build .cache
+npm run build
+----
+
+=== Custom Overrides Conflict
+
+If you have custom `nav-tree.hbs` or other partials:
+
+1. The skill warns before overwriting
+2. Backups are created as `*.backup`
+3. Merge your customizations manually if needed
+
+== Repository Structure
+
+[source,text]
+----
+pert-team-claude-skills/
+├── README.md                      # Professional overview
+├── guide/                         # HTML installation guide
+│   ├── index.html                 # Interactive guide
+│   ├── css/style.css              # Red Hat themed styling
+│   └── js/script.js               # Copy buttons, animations
+├── skills/                        # Skill distribution
+│   └── antora-progress-tracking/
+│       ├── skill.md               # Install skill
+│       ├── remove.md              # Uninstall skill
+│       ├── README.md              # Documentation
+│       └── templates/             # Template files (6 files)
+├── modules/                       # Example course content
+│   ├── ROOT/                      # This page!
+│   ├── claude-basics/             # Module 1
+│   ├── skill-building/            # Module 2
+│   ├── course-creation/           # Module 3
+│   └── appendix/                  # Additional resources
+├── .agents/skills/                # 14 example Claude skills
+├── prompts/                       # Course design prompts
+└── templates/                     # Content templates
+----
+
+== Next Steps
+
+Ready to try it? Here's what to do:
+
+1. **See it in action** - Navigate through the course modules (left sidebar)
+2. **Watch checkmarks appear** - Visit a few pages, then refresh
+3. **Test clearing** - Open console (F12) and run `clearCourseProgress()`
+4. **Install in your course** - Use the Claude Code skill (`/add-progress-tracking`)
+5. **Read the guide** - Open link:../../guide/index.html[guide/index.html^] for detailed instructions
+
+== Support
+
+* **GitHub Issues:** Report bugs or request features
+* **Installation Guide:** link:../../guide/index.html[guide/index.html^]
+* **Skill README:** link:../../skills/antora-progress-tracking/README.md[Skill documentation^]
+
+---
+
+*This course showcases the progress tracking feature while teaching Claude Code skills. As you navigate, you're experiencing the feature in action!*

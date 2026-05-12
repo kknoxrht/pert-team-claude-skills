@@ -1,6 +1,6 @@
 site:
-  title: FIXME Course Title
-  start_page: REPLACEREPONAME::index.adoc
+  title: Claude Skills Course - Progress Tracking Demo
+  start_page: pert-team-claude-skills::index.adoc
 
 content:
   sources:

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antora Progress Tracking - Installation Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Back to Course Link -->
+    <div class="back-to-course">
+        <a href="../index.html" target="_blank">← Back to Course</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="images/red-hat-logo.svg" alt="Red Hat" class="logo" onerror="this.style.display='none'">
+                <h1>Antora Progress Tracking</h1>
+                <p class="subtitle">Add Visual Progress Indicators to Your Courses</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#prerequisites">Prerequisites</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Overview Section -->
+            <section id="overview" class="section">
+                <h2>📚 What is Progress Tracking?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Visual Checkmarks</h3>
+                        <p>Automatically shows checkmarks next to pages students have visited</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Persistent Progress</h3>
+                        <p>Student progress is saved in their browser across sessions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Privacy First</h3>
+                        <p>All data stays on the student's device - no server tracking</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>GitHub Pages Ready</h3>
+                        <p>Works on static sites with no backend required</p>
+                    </div>
+                </div>
+
+                <div class="demo-box">
+                    <h3>Example Navigation</h3>
+                    <div class="demo-nav">
+                        <ul>
+                            <li class="visited"><span class="checkmark">✓</span> Module 1: Introduction</li>
+                            <li class="visited indent"><span class="checkmark">✓</span> 1.1 Overview</li>
+                            <li class="visited indent"><span class="checkmark">✓</span> 1.2 Getting Started</li>
+                            <li class="indent">1.3 Prerequisites</li>
+                            <li>Module 2: Advanced Topics</li>
+                            <li class="visited indent"><span class="checkmark">✓</span> 2.1 Architecture</li>
+                            <li class="indent">2.2 Best Practices</li>
+                            <li>Conclusion</li>
+                        </ul>
+                    </div>
+                    <p class="demo-caption">Green checkmarks appear next to pages students have visited</p>
+                </div>
+            </section>
+
+            <!-- Prerequisites Section -->
+            <section id="prerequisites" class="section">
+                <h2>📋 Prerequisites</h2>
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1" disabled>
+                        <label for="check1"><strong>Claude Code installed</strong> - CLI, Desktop, or IDE extension</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2" disabled>
+                        <label for="check2"><strong>Antora course</strong> - Must have <code>antora.yml</code> and <code>supplemental-ui/</code></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3" disabled>
+                        <label for="check3"><strong>Build script</strong> - <code>package.json</code> with <code>npm run build</code></label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4" disabled>
+                        <label for="check4"><strong>Git installed</strong> - For cloning the skill repository</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation Section -->
+            <section id="installation" class="section">
+                <h2>🚀 Installation Steps</h2>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Clone the Skill Repository</h3>
+                        <p>Open your terminal and run:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre><code>cd ~/.claude/skills/
+git clone https://github.com/YOUR-USERNAME/antora-progress-tracking-skill.git</code></pre>
+                        </div>
+                        <div class="note note-info">
+                            <strong>Note:</strong> This is a one-time setup. You only need to clone the skill once.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Navigate to Your Course</h3>
+                        <p>Go to the Antora course directory where you want to add progress tracking:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre><code>cd /path/to/your-antora-course</code></pre>
+                        </div>
+                        <p class="hint">Example:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre><code>cd ~/Documents/GitHub/rhoai3-maas</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Run the Installation Skill</h3>
+                        <p>Start Claude Code and run the skill:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre><code>claude</code></pre>
+                        </div>
+                        <p>Then in Claude Code, type:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre><code>/add-progress-tracking</code></pre>
+                        </div>
+                        <div class="note note-success">
+                            <strong>What happens:</strong> Claude will validate your course, install files, update navigation, and rebuild your site.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Test Locally</h3>
+                        <p>Start your local server:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre><code>npm run serve</code></pre>
+                        </div>
+                        <p>Open your browser and:</p>
+                        <ol>
+                            <li>Navigate to a few different pages</li>
+                            <li>Refresh the browser</li>
+                            <li>Check the navigation sidebar for green checkmarks ✓</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Commit and Deploy</h3>
+                        <p>If everything looks good, commit your changes:</p>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            <pre><code>git add -A
+git commit -m "Add progress tracking v1.0"
+git push origin main</code></pre>
+                        </div>
+                        <div class="note note-info">
+                            <strong>GitHub Pages:</strong> Your changes will deploy automatically if GitHub Pages is enabled.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Usage Section -->
+            <section id="usage" class="section">
+                <h2>💡 How to Use</h2>
+
+                <div class="usage-grid">
+                    <div class="usage-card">
+                        <h3>For Students</h3>
+                        <p>Progress tracking works automatically:</p>
+                        <ul>
+                            <li>Visit course pages normally</li>
+                            <li>Checkmarks appear next to visited pages</li>
+                            <li>Progress persists across browser sessions</li>
+                            <li>No login or registration required</li>
+                        </ul>
+                    </div>
+
+                    <div class="usage-card">
+                        <h3>Customizing the Checkmark</h3>
+                        <p>Change the checkmark icon:</p>
+                        <div class="code-block">
+                            <pre><code>Edit: supplemental-ui/partials/nav-tree.hbs
+
+Find line 12:
+&lt;span class="nav-progress-mark"&gt;✓&lt;/span&gt;
+
+Change to:
+&lt;span class="nav-progress-mark"&gt;★&lt;/span&gt;</code></pre>
+                        </div>
+                        <p>Other icon options: ✔ ★ 🎯 🟢</p>
+                    </div>
+
+                    <div class="usage-card">
+                        <h3>Clearing Progress (Testing)</h3>
+                        <p>To reset progress during testing:</p>
+                        <ol>
+                            <li>Open browser DevTools (F12)</li>
+                            <li>Go to Console tab</li>
+                            <li>Type: <code>clearCourseProgress()</code></li>
+                            <li>Press Enter</li>
+                        </ol>
+                        <p>Page will reload with all checkmarks cleared.</p>
+                    </div>
+
+                    <div class="usage-card">
+                        <h3>Uninstalling</h3>
+                        <p>To remove progress tracking:</p>
+                        <div class="code-block">
+                            <pre><code>cd /path/to/your-course
+
+claude
+/remove-progress-tracking</code></pre>
+                        </div>
+                        <p>The skill will restore backups and remove all files.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Troubleshooting Section -->
+            <section id="troubleshooting" class="section">
+                <h2>🔧 Troubleshooting</h2>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Checkmarks not showing</span>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <ol>
+                                <li>Check browser console for errors (F12 → Console)</li>
+                                <li>Verify files exist:
+                                    <div class="code-block">
+                                        <pre><code>ls build/site/_/js/progress-tracker.js
+ls build/site/_/css/progress-tracker.css</code></pre>
+                                    </div>
+                                </li>
+                                <li>Check localStorage is enabled (not in private browsing)</li>
+                                <li>Rebuild the site:
+                                    <div class="code-block">
+                                        <pre><code>rm -rf build .cache
+npm run build</code></pre>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Build fails after installation</span>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Clear cache and rebuild:</p>
+                            <div class="code-block">
+                                <pre><code>rm -rf build .cache
+npm run build</code></pre>
+                            </div>
+                            <p>If errors persist, check for pre-existing issues unrelated to progress tracking.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Skill not found</span>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Verify the skill is in the correct location:</p>
+                            <div class="code-block">
+                                <pre><code>ls ~/.claude/skills/antora-progress-tracking-skill/skill.md</code></pre>
+                            </div>
+                            <p>If not found, re-clone the repository:</p>
+                            <div class="code-block">
+                                <pre><code>cd ~/.claude/skills/
+git clone https://github.com/YOUR-USERNAME/antora-progress-tracking-skill.git</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Custom overrides detected</span>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>The skill detected existing custom files. Options:</p>
+                            <ol>
+                                <li><strong>Allow backup:</strong> Say "yes" - skill will backup your files to <code>*.backup</code></li>
+                                <li><strong>Merge manually:</strong> After installation, compare:
+                                    <div class="code-block">
+                                        <pre><code>diff supplemental-ui/partials/nav-tree.hbs.backup \
+     supplemental-ui/partials/nav-tree.hbs</code></pre>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support Section -->
+            <section id="support" class="section">
+                <h2>💬 Support & Resources</h2>
+
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h3>📖 Documentation</h3>
+                        <ul>
+                            <li><a href="https://github.com/YOUR-USERNAME/antora-progress-tracking-skill/blob/main/README.md" target="_blank">README</a></li>
+                            <li><a href="https://github.com/YOUR-USERNAME/antora-progress-tracking-skill/blob/main/INSTALL.md" target="_blank">Installation Guide</a></li>
+                            <li><a href="https://github.com/YOUR-USERNAME/antora-progress-tracking-skill/blob/main/QUICKSTART.md" target="_blank">Quick Start</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="support-card">
+                        <h3>🐛 Report Issues</h3>
+                        <p>Found a bug or have a feature request?</p>
+                        <a href="https://github.com/YOUR-USERNAME/antora-progress-tracking-skill/issues" target="_blank" class="btn">Open an Issue</a>
+                    </div>
+
+                    <div class="support-card">
+                        <h3>💡 Get Help</h3>
+                        <p>Need assistance with installation?</p>
+                        <ul>
+                            <li>Slack: #showroom-support</li>
+                            <li>Email: your-team@redhat.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Reference -->
+            <section class="section quick-ref">
+                <h2>⚡ Quick Reference</h2>
+                <div class="ref-grid">
+                    <div class="ref-card">
+                        <h4>Install Skill</h4>
+                        <code>/add-progress-tracking</code>
+                    </div>
+                    <div class="ref-card">
+                        <h4>Remove Skill</h4>
+                        <code>/remove-progress-tracking</code>
+                    </div>
+                    <div class="ref-card">
+                        <h4>Clear Progress</h4>
+                        <code>clearCourseProgress()</code>
+                    </div>
+                    <div class="ref-card">
+                        <h4>Rebuild Site</h4>
+                        <code>npm run build</code>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Red Hat. Progress Tracking Skill v1.0.0</p>
+            <p>Built for Red Hat OpenShift AI Training Courses</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

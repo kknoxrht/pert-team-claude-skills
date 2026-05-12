@@ -1,0 +1,35 @@
+= Introduction to Claude Code
+:navtitle: Claude Code Basics
+
+== Module Overview
+
+Welcome to the first module of the Claude Skills Course. This module introduces you to Claude Code, Anthropic's official CLI tool for interactive AI-assisted development. You'll learn the fundamentals that form the foundation for building custom skills and creating automated content workflows.
+
+== What You'll Learn
+
+By completing this module, you will be able to:
+
+* Launch and navigate Claude Code in your terminal
+* Distinguish between Claude Code prompts and bash commands
+* Use built-in Claude Code skills effectively
+* Work with Claude Code in git repositories
+* Decide when to use skills versus conversational prompts
+* Apply effective prompting techniques for better results
+
+== Topics Covered
+
+**Getting Started with Claude Code**::
+Launch Claude Code, navigate the interface, and understand the basic interaction model.
+
+**Skills vs. Conversational Prompts**::
+Learn when to use pre-built skills (like `/initialize-course-project`) versus conversational prompts.
+
+**Working in Git Repositories**::
+Understand how Claude Code operates within git repositories and manages file operations.
+
+**Effective Prompting Techniques**::
+Apply strategies for clear communication and getting optimal results from Claude Code.
+
+== Let's Get Started
+
+The following sections will walk you through the fundamentals of Claude Code. Master these basics before progressing to Module 2 where you'll build your own custom skills.

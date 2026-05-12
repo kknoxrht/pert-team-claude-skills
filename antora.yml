@@ -1,10 +1,12 @@
-name: REPLACEREPONAME
-title: FIXME Course Title
+name: pert-team-claude-skills
+title: Claude Skills Course - Progress Tracking Demo
 version: 1
+asciidoc:
+  attributes:
+    experimental: true
 nav:
 - modules/ROOT/nav.adoc
-- modules/LABENV/nav.adoc
-- modules/chapter1/nav.adoc
-- modules/chapter2/nav.adoc
-- modules/chapter3/nav.adoc
+- modules/claude-basics/nav.adoc
+- modules/skill-building/nav.adoc
+- modules/course-creation/nav.adoc
 - modules/appendix/nav.adoc

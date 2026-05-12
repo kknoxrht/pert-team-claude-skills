@@ -1,0 +1,62 @@
+= Building Claude Skills for Course Development
+:navtitle: Building Claude Skills
+
+== Module Overview
+
+Now that you understand Claude Code fundamentals from Module 1, this module teaches you how to create powerful, reusable Claude Code skills that automate content generation workflows while maintaining high quality standards.
+
+You'll learn the complete skill development lifecycle, from anatomy and structure through workflow design, token management, quality gates, and real-world production examples.
+
+== What You'll Learn
+
+By completing this module, you will be able to:
+
+* Master the structure of Claude skill files including frontmatter, metadata, and context modes
+* Create sequential, conversational workflows that guide users through complex tasks
+* Control output size and prevent token overflow in generated content
+* Build inline validation and quality checks into your skills
+* Use external files and shared rules to maintain consistency
+* Follow proven patterns and avoid common pitfalls in skill development
+* Analyze and learn from production skills used in the Showroom ecosystem
+
+== Building on Module 1
+
+This module assumes you've completed **Module 1: Introduction to Claude Code** and are comfortable with:
+
+* Launching and using Claude Code in your terminal
+* Understanding the difference between skills and conversational prompts
+* Working with Claude Code in git repositories
+* Basic effective prompting techniques
+
+== Sections in This Module
+
+This module is organized into seven comprehensive sections:
+
+**Section 1: Skill Anatomy**::
+Understand the fundamental structure of Claude skills, including file organization, frontmatter configuration, and metadata.
+
+**Section 2: Workflow Design**::
+Master the art of creating conversational workflows that ask questions sequentially and build context progressively.
+
+**Section 3: Token Management**::
+Learn how to manage Claude's output token budget and prevent overwhelming users with verbose responses.
+
+**Section 4: Quality Gates**::
+Implement inline quality checks and validation patterns to ensure generated content meets standards.
+
+**Section 5: References & Templates**::
+Leverage external reference files, templates, and shared rules to maintain consistency across skills.
+
+**Section 6: Real Examples**::
+Analyze production skills from the Showroom ecosystem including lab creation, demo generation, and blog writing.
+
+**Section 7: Best Practices**::
+Apply proven patterns, avoid common mistakes, and optimize your skills for production use.
+
+== What You'll Gain
+
+This module is built from **real, production skills** actively used in Red Hat's enablement ecosystem—skills that generate hundreds of workshop modules using battle-tested patterns proven at scale.
+
+== Let's Begin
+
+Ready to build powerful Claude skills? Continue to Section 1 to start learning skill anatomy.
