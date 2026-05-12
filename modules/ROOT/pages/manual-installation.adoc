@@ -1,0 +1,654 @@
+= Manual Installation Guide
+:navtitle: Manual Installation
+
+This guide walks you through installing the progress tracker manually, without using AI or automation. Follow these steps to add visual progress tracking to your Antora course.
+
+== Overview
+
+The progress tracker consists of *6 files*: 3 static files you can copy as-is, and 3 dynamic files that need customization based on your project structure.
+
+=== Files Summary
+
+[cols="2,1,3"]
+|===
+|File |Type |Purpose
+
+|`progress-tracker.js`
+|✅ Static
+|Core tracking logic - copy as-is
+
+|`progress-tracker.css`
+|✅ Static
+|Checkmark styling - copy as-is
+
+|`nav-tree.hbs`
+|⚙️ Dynamic
+|Navigation template - needs your structure
+
+|`footer-scripts.hbs`
+|⚙️ Dynamic
+|Script loader - may need merging
+
+|`head-styles.hbs`
+|⚙️ Dynamic
+|CSS loader - may need merging
+
+|`progress-tracking.adoc`
+|✅ Static
+|User documentation - copy as-is
+|===
+
+== Prerequisites
+
+Before you start, verify your project has:
+
+* ✅ Antora 3.x installed
+* ✅ `antora-playbook.yml` with `ui.supplemental_files` configured
+* ✅ `package.json` with `build` script
+* ✅ A module with navigation (e.g., `ROOT` or `appendix`)
+
+== Step-by-Step Installation
+
+=== Step 1: Create Directory Structure
+
+Create the supplemental-ui directories if they don't exist:
+
+[source,bash]
+----
+cd /path/to/your-antora-course
+
+# Create directories
+mkdir -p supplemental-ui/js
+mkdir -p supplemental-ui/css
+mkdir -p supplemental-ui/partials
+----
+
+=== Step 2: Copy Static Files (No Edits Needed)
+
+These files can be copied exactly as-is with no modifications.
+
+==== 2.1 Copy JavaScript File
+
+**Source:** `supplemental-ui/js/progress-tracker.js`
+
+[source,bash]
+----
+# From this repository to your course:
+cp /path/to/pert-team-claude-skills/supplemental-ui/js/progress-tracker.js \
+   supplemental-ui/js/
+----
+
+**What it does:**
+
+* Reads current page URL on load
+* Stores visited pages in `localStorage`
+* Scans navigation for `data-progress-path` attributes
+* Shows checkmarks for visited pages
+
+**No customization needed** - this file works as-is for all Antora courses.
+
+==== 2.2 Copy CSS File
+
+**Source:** `supplemental-ui/css/progress-tracker.css`
+
+[source,bash]
+----
+cp /path/to/pert-team-claude-skills/supplemental-ui/css/progress-tracker.css \
+   supplemental-ui/css/
+----
+
+**What it does:**
+
+* Styles the checkmark icon (green ✓)
+* Handles dark mode
+* Hides checkmarks in print
+* Ensures proper alignment
+
+**No customization needed** unless you want to change colors or icons.
+
+=== Step 3: Add/Update Dynamic Files
+
+These files may need to be created or merged with existing files.
+
+==== 3.1 Script Loader (footer-scripts.hbs)
+
+**Path:** `supplemental-ui/partials/footer-scripts.hbs`
+
+**Scenario A:** File doesn't exist (create it)
+
+[source,handlebars]
+----
+<script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"></script>
+<script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
+{{#if env.SITE_SEARCH_PROVIDER}}
+{{> search-scripts}}
+{{/if}}
+<script src="{{{uiRootPath}}}/js/progress-tracker.js"></script>
+----
+
+**Scenario B:** File exists (add this line at the end)
+
+[source,handlebars]
+----
+<script src="{{{uiRootPath}}}/js/progress-tracker.js"></script>
+----
+
+TIP: The script must load *after* the page navigation is rendered.
+
+==== 3.2 Style Loader (head-styles.hbs)
+
+**Path:** `supplemental-ui/partials/head-styles.hbs`
+
+**Scenario A:** File doesn't exist (create it)
+
+[source,handlebars]
+----
+    <link rel="stylesheet" href="{{{uiRootPath}}}/css/site.css">
+    <link rel="stylesheet" href="{{{uiRootPath}}}/css/progress-tracker.css">
+----
+
+**Scenario B:** File exists (add this line after other stylesheets)
+
+[source,handlebars]
+----
+    <link rel="stylesheet" href="{{{uiRootPath}}}/css/progress-tracker.css">
+----
+
+WARNING: The spaces at the start are important - maintain proper indentation.
+
+==== 3.3 Navigation Template (nav-tree.hbs)
+
+This is the *most important* file and requires the most care.
+
+**Path:** `supplemental-ui/partials/nav-tree.hbs`
+
+**Check if you have a custom version:**
+
+[source,bash]
+----
+# If this file exists, you have customizations:
+ls -la supplemental-ui/partials/nav-tree.hbs
+
+# Back it up before proceeding:
+cp supplemental-ui/partials/nav-tree.hbs \
+   supplemental-ui/partials/nav-tree.hbs.backup
+----
+
+**Scenario A:** No custom nav-tree.hbs (recommended)
+
+Copy the template directly:
+
+[source,bash]
+----
+cp /path/to/pert-team-claude-skills/supplemental-ui/partials/nav-tree.hbs \
+   supplemental-ui/partials/
+----
+
+**Scenario B:** You have a custom nav-tree.hbs
+
+You need to merge manually. Add these two elements to your existing template:
+
+1. **Add `data-progress-path` attribute** to the `<a>` tag:
+
+[source,handlebars]
+----
+<a class="nav-link" href="{{{relativize ./url}}}" data-progress-path="{{{./url}}}">
+----
+
+2. **Add checkmark span** inside the `<a>` tag, before `{{{./content}}}`:
+
+[source,handlebars]
+----
+<a class="nav-link" href="{{{relativize ./url}}}" data-progress-path="{{{./url}}}">
+  <span class="nav-progress-mark" aria-hidden="true">✓</span>
+  {{{./content}}}
+</a>
+----
+
+**Complete reference template:**
+
+[source,handlebars]
+----
+{{!-- progress-tracking-installed: v1.0 --}}
+{{#if navigation.length}}
+<ul class="nav-list">
+  {{#each navigation}}
+  <li class="nav-item{{#if (eq ./url @root.page.url)}} is-current-page{{/if}}" data-depth="{{or ../level 0}}">
+    {{#if ./content}}
+    {{#if ./items.length}}
+    <button class="nav-item-toggle"></button>
+    {{/if}}
+    {{#if ./url}}
+    <a class="nav-link" href="{{~#if (eq ./urlType 'internal')}}{{{relativize ./url}}}{{~else}}{{{./url}}}{{~/if}}" data-progress-path="{{{./url}}}">
+      <span class="nav-progress-mark" aria-hidden="true">✓</span>
+      {{{./content}}}
+    </a>
+    {{else}}
+    <span class="nav-text">{{{./content}}}</span>
+    {{/if}}
+    {{/if}}
+{{> nav-tree navigation=./items level=(increment ../level)}}
+  </li>
+  {{/each}}
+</ul>
+{{/if}}
+----
+
+=== Step 4: Add User Documentation (Optional)
+
+Copy the documentation page so users know how progress tracking works:
+
+[source,bash]
+----
+# Create appendix module if needed
+mkdir -p modules/appendix/pages
+
+# Copy documentation
+cp /path/to/pert-team-claude-skills/modules/appendix/pages/progress-tracking.adoc \
+   modules/appendix/pages/
+----
+
+**Add to navigation:**
+
+Edit `modules/appendix/nav.adoc` (or create it):
+
+[source,asciidoc]
+----
+* xref:progress-tracking.adoc[Visual Progress Tracking]
+----
+
+=== Step 5: Verify Supplemental UI Configuration
+
+Check your `antora-playbook.yml` has supplemental files enabled:
+
+[source,bash]
+----
+cat antora-playbook.yml
+----
+
+Should contain:
+
+[source,yaml]
+----
+ui:
+  bundle:
+    url: ./ui-bundle/ui-bundle.zip  # or your UI bundle path
+  supplemental_files: ./supplemental-ui
+----
+
+If missing, add the `supplemental_files` line under `ui:`.
+
+=== Step 6: Configure Site URL (GitHub Pages)
+
+If deploying to GitHub Pages, add the site URL to avoid path issues:
+
+**Edit:** `antora-playbook.yml`
+
+[source,yaml]
+----
+site:
+  title: Your Course Title
+  url: https://your-org.github.io/your-repo  # Add this line
+  start_page: your-component::index.adoc
+----
+
+Replace:
+* `your-org` → your GitHub username or organization
+* `your-repo` → your repository name
+
+IMPORTANT: Without `site.url`, progress tracking may not work correctly on GitHub Pages.
+
+=== Step 7: Build and Test
+
+Rebuild your Antora site:
+
+[source,bash]
+----
+npm run build
+----
+
+Expected output: No errors, build completes successfully.
+
+=== Step 8: Serve Locally and Verify
+
+Start a local web server:
+
+[source,bash]
+----
+npm run serve
+# Or manually:
+npx http-server build/site -c-1
+----
+
+Open browser to `http://localhost:8080` (or shown port).
+
+== Verification Checklist
+
+Open your course in a browser and verify:
+
+=== ✅ Visual Check
+
+. [ ] Navigation sidebar shows checkmark icons (hidden by default)
+. [ ] Visit a page - checkmark should appear next to that page
+. [ ] Refresh browser - checkmark persists
+. [ ] Visit another page - second checkmark appears
+
+=== ✅ Browser Console Check
+
+Open Developer Tools (F12) → Console tab.
+
+Should see:
+
+[source,text]
+----
+Progress tracker initialized. Run debugCourseProgress() for details.
+----
+
+No errors should appear.
+
+=== ✅ LocalStorage Check
+
+In Developer Tools:
+
+. Go to *Application* tab (Chrome) or *Storage* tab (Firefox)
+. Expand *Local Storage*
+. Click your site URL
+. Should see key: `antora-course-progress`
+. Value should be JSON array: `["/path/page1.html", "/path/page2.html"]`
+
+=== ✅ HTML Inspection Check
+
+In Developer Tools → Elements:
+
+. Find navigation `<a>` tags
+. Should have attribute: `data-progress-path="/path/to/page.html"`
+. Should contain: `<span class="nav-progress-mark">✓</span>`
+
+=== ✅ Debug Command Check
+
+In browser console, run:
+
+[source,javascript]
+----
+debugCourseProgress()
+----
+
+Should show:
+
+[source,text]
+----
+=== Progress Tracker Debug ===
+Current path: /your-component/1/index.html
+Visited pages: ["/your-component/1/index.html", "/your-component/1/page2.html"]
+Nav links found: 15
+Link 0: {href: "index.html", dataPath: "/your-component/1/index.html", ...}
+...
+----
+
+== Troubleshooting
+
+=== Problem: Checkmarks Not Appearing
+
+**Symptom:** Navigation loads but no checkmarks show up, even after visiting pages.
+
+**Diagnosis:**
+
+[source,javascript]
+----
+// In browser console:
+debugCourseProgress()
+----
+
+Check output:
+
+* *Nav links found: 0* → Template issue (nav-tree.hbs not updated)
+* *Current path: undefined* → JavaScript error
+* *Visited pages: []* → localStorage blocked or JavaScript not loading
+
+**Solutions:**
+
+[%header,cols="2,3"]
+|===
+|Cause |Fix
+
+|Template not updated
+|Verify `nav-tree.hbs` has `data-progress-path` attribute
+
+|JavaScript not loading
+|Check browser console for 404 errors, verify script tag in footer-scripts.hbs
+
+|LocalStorage blocked
+|Check browser privacy settings, test in incognito mode
+
+|Wrong paths
+|Check `site.url` in antora-playbook.yml matches your deployment URL
+|===
+
+=== Problem: Build Fails
+
+**Error:** `Cannot find partial 'nav-tree'`
+
+**Solution:** Make sure `nav-tree.hbs` is in `supplemental-ui/partials/` directory.
+
+**Error:** `ENOENT: no such file or directory`
+
+**Solution:** Verify all file paths are correct and directories exist.
+
+=== Problem: Checkmarks Disappear After Refresh
+
+**Symptom:** Checkmarks show briefly, then vanish.
+
+**Cause:** Path mismatch between stored paths and navigation paths.
+
+**Solution:**
+
+1. Clear localStorage: `clearCourseProgress()`
+2. Check paths in debug: `debugCourseProgress()`
+3. Ensure `site.url` in playbook matches deployment URL
+
+=== Problem: Works Locally, Not on GitHub Pages
+
+**Symptom:** Progress tracking works with `npm run serve` but not on deployed site.
+
+**Cause:** Missing or incorrect `site.url` configuration.
+
+**Solution:**
+
+Edit `antora-playbook.yml`:
+
+[source,yaml]
+----
+site:
+  url: https://your-org.github.io/your-repo  # Must match GitHub Pages URL
+----
+
+Rebuild and redeploy.
+
+== File Reference
+
+=== Complete File Tree
+
+After installation, your project should have:
+
+[source,text]
+----
+your-antora-course/
+├── antora-playbook.yml              # ⚙️ Add site.url
+├── package.json
+├── supplemental-ui/
+│   ├── js/
+│   │   └── progress-tracker.js      # ✅ Copy as-is
+│   ├── css/
+│   │   └── progress-tracker.css     # ✅ Copy as-is
+│   └── partials/
+│       ├── nav-tree.hbs             # ⚙️ Update or copy
+│       ├── footer-scripts.hbs       # ⚙️ Add script tag
+│       └── head-styles.hbs          # ⚙️ Add CSS link
+└── modules/
+    └── appendix/
+        ├── nav.adoc                 # ⚙️ Add link to docs
+        └── pages/
+            └── progress-tracking.adoc  # ✅ Copy as-is
+----
+
+=== File Checksums (Verification)
+
+To verify you have the correct files, check file sizes:
+
+[source,bash]
+----
+ls -lh supplemental-ui/js/progress-tracker.js
+# Should be approximately 4.3 KB
+
+ls -lh supplemental-ui/css/progress-tracker.css
+# Should be approximately 1.2 KB
+
+ls -lh supplemental-ui/partials/nav-tree.hbs
+# Should be approximately 800 bytes
+----
+
+== Customization After Installation
+
+=== Change Checkmark Color
+
+Edit `supplemental-ui/css/progress-tracker.css`:
+
+[source,css]
+----
+.nav-progress-mark {
+  color: #0066cc; /* Change to blue, for example */
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .nav-progress-mark {
+    color: #66b3ff; /* Lighter blue for dark mode */
+  }
+}
+----
+
+=== Change Checkmark Icon
+
+Edit `supplemental-ui/partials/nav-tree.hbs`:
+
+[source,handlebars]
+----
+<!-- Change from ✓ to another icon: -->
+<span class="nav-progress-mark" aria-hidden="true">🎯</span>
+<!-- or -->
+<span class="nav-progress-mark" aria-hidden="true">✔</span>
+<!-- or -->
+<span class="nav-progress-mark" aria-hidden="true">★</span>
+----
+
+**Popular icons:** ✓ ✔ ★ 🎯 🟢 ☑ ✅
+
+=== Clear All Progress (Testing)
+
+For testing or demonstrations, clear all progress data:
+
+[source,javascript]
+----
+// In browser console:
+clearCourseProgress()
+----
+
+This removes all visited pages from localStorage and reloads the page.
+
+== Maintenance
+
+=== Updating to New Version
+
+When a new version is released:
+
+1. **Backup current files:**
++
+[source,bash]
+----
+cp supplemental-ui/js/progress-tracker.js supplemental-ui/js/progress-tracker.js.old
+cp supplemental-ui/css/progress-tracker.css supplemental-ui/css/progress-tracker.css.old
+----
+
+2. **Copy new files** (repeat Step 2 from installation)
+
+3. **Rebuild:**
++
+[source,bash]
+----
+npm run build
+----
+
+4. **Test thoroughly** before deploying
+
+=== Removing Progress Tracking
+
+To completely remove progress tracking:
+
+1. **Delete files:**
++
+[source,bash]
+----
+rm supplemental-ui/js/progress-tracker.js
+rm supplemental-ui/css/progress-tracker.css
+rm supplemental-ui/partials/nav-tree.hbs
+rm supplemental-ui/partials/footer-scripts.hbs  # If only used for progress tracker
+rm supplemental-ui/partials/head-styles.hbs     # If only used for progress tracker
+----
+
+2. **Restore original nav-tree.hbs** (if you backed it up):
++
+[source,bash]
+----
+cp supplemental-ui/partials/nav-tree.hbs.backup \
+   supplemental-ui/partials/nav-tree.hbs
+----
+
+3. **Remove documentation link** from `modules/appendix/nav.adoc`
+
+4. **Rebuild:**
++
+[source,bash]
+----
+npm run build
+----
+
+== Support and Resources
+
+* **GitHub Repository:** https://github.com/kknoxrht/pert-team-claude-skills
+* **Live Demo:** https://kknoxrht.github.io/pert-team-claude-skills/
+* **Report Issues:** https://github.com/kknoxrht/pert-team-claude-skills/issues
+
+== Quick Reference Card
+
+[%header,cols="1,2"]
+|===
+|Task |Command
+
+|Install JavaScript
+|`cp progress-tracker.js supplemental-ui/js/`
+
+|Install CSS
+|`cp progress-tracker.css supplemental-ui/css/`
+
+|Update navigation template
+|Edit `supplemental-ui/partials/nav-tree.hbs`
+
+|Build site
+|`npm run build`
+
+|Serve locally
+|`npm run serve`
+
+|Debug in browser
+|`debugCourseProgress()`
+
+|Clear progress
+|`clearCourseProgress()`
+
+|Check localStorage
+|F12 → Application → Local Storage
+|===
+
+---
+
+*This manual process gives you full control over the installation. No AI required - just follow the steps and you'll have working progress tracking!*

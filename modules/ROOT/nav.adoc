@@ -1,1 +1,2 @@
 * xref:index.adoc[]
+* xref:manual-installation.adoc[Manual Installation Guide]
