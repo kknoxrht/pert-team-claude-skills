@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Working in Git Repositories :: Claude Skills Course - Progress Tracking Demo</title>
+    <link rel="prev" href="02-skills-vs-prompts.html">
+    <link rel="next" href="04-effective-prompting.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/vendor/tabs.css">
+    <link rel="stylesheet" href="../../../_/css/vendor/collapsible.css">
+    <link rel="stylesheet" href="../../../_/css/vendor/reading-time.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Claude Skills Course - Progress Tracking Demo</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="pert-team-claude-skills" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Claude Skills Course - Progress Tracking Demo</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Introduction to Claude Code</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="01-getting-started.html">Getting Started with Claude Code</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="02-skills-vs-prompts.html">Skills vs. Conversational Prompts</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="03-working-in-repos.html">Working in Git Repositories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="04-effective-prompting.html">Effective Prompting Techniques</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../skill-building/index.html">Building Claude Skills</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../skill-building/01-skill-anatomy.html">Module 1: Skill Anatomy</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../skill-building/02-workflow-design.html">Module 2: Workflow Design</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../skill-building/03-token-management.html">Module 3: Token Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../skill-building/04-quality-gates.html">Module 4: Quality Gates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../skill-building/05-references-templates.html">Module 5: References &amp; Templates</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../skill-building/06-real-examples.html">Module 6: Real Examples</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../skill-building/07-best-practices.html">Module 7: Best Practices</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../course-creation/index.html">Creating Red Hat QuickCourses</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course-creation/01-quickcourse-workflow.html">The QuickCourse Generation Workflow</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course-creation/02-content-request-template.html">Content Request Template</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course-creation/03-writing-style-standards.html">Writing Style Standards</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course-creation/04-terminology-consistency.html">Terminology Consistency</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../course-creation/05-fresh-session-workflow.html">Fresh Session Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Claude Skills Course - Progress Tracking Demo</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Claude Skills Course - Progress Tracking Demo</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Claude Skills Course - Progress Tracking Demo</a></li>
+    <li><a href="index.html">Introduction to Claude Code</a></li>
+    <li><a href="03-working-in-repos.html">Working in Git Repositories</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Working in Git Repositories</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Claude Code is designed to work seamlessly within git repositories. This section covers how Claude Code interacts with git and best practices for repository-based workflows.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_claude_code_and_git_awareness"><a class="anchor" href="#_claude_code_and_git_awareness"></a>Claude Code and Git Awareness</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you launch Claude Code in a git repository, it automatically understands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Current branch</strong> - Which branch you&#8217;re working on</p>
+</li>
+<li>
+<p><strong>Git status</strong> - Modified, untracked, and staged files</p>
+</li>
+<li>
+<p><strong>Commit history</strong> - Recent commits and changes</p>
+</li>
+<li>
+<p><strong>Repository structure</strong> - Directory organization and file locations</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_checking_repository_status"><a class="anchor" href="#_checking_repository_status"></a>Checking Repository Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ask Claude about your repository status:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "What's the current git status?"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Claude will respond with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Current branch name</p>
+</li>
+<li>
+<p>Modified files</p>
+</li>
+<li>
+<p>Untracked files</p>
+</li>
+<li>
+<p>Staged changes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_making_changes_with_claude_code"><a class="anchor" href="#_making_changes_with_claude_code"></a>Making Changes with Claude Code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When Claude Code edits files, it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Modifies files in your working directory</p>
+</li>
+<li>
+<p>Does NOT automatically commit changes</p>
+</li>
+<li>
+<p>Preserves your git workflow</p>
+</li>
+<li>
+<p>Allows you to review changes before committing</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reviewing_changes"><a class="anchor" href="#_reviewing_changes"></a>Reviewing Changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After Claude makes changes, you can review them:</p>
+</div>
+<div class="paragraph">
+<p><strong>In Claude Code</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "What files did you just modify?"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>In your terminal</strong> (outside Claude):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git status
+git diff</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>In your editor</strong>:
+Open the files to see the changes highlighted</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_committing_changes"><a class="anchor" href="#_committing_changes"></a>Committing Changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Claude Code can help you commit, but you should understand what&#8217;s being committed:</p>
+</div>
+<div class="paragraph">
+<p><strong>Option 1: Let Claude create a commit</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "Please commit these changes with an appropriate message"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Option 2: Commit manually</strong> (recommended for important changes):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># In a standard terminal:
+git add &lt;files&gt;
+git commit -m "Your commit message"</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For important changes, review the diff yourself before committing. Claude is helpful but you&#8217;re responsible for what goes in your repository.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_with_branches"><a class="anchor" href="#_working_with_branches"></a>Working with Branches</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Claude Code can work with git branches:</p>
+</div>
+<div class="paragraph">
+<p><strong>Create a new branch</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "Create a new branch called 'feature/new-chapter' and switch to it"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Check current branch</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "What branch am I on?"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Switch branches</strong> (in terminal):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout &lt;branch-name&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Always ensure your changes are committed or stashed before switching branches.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices_for_repository_work"><a class="anchor" href="#_best_practices_for_repository_work"></a>Best Practices for Repository Work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>1. Start with a clean repository</strong></p>
+</div>
+<div class="paragraph">
+<p>Before using Claude Code for major changes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git status  # Should show "nothing to commit, working tree clean"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>2. Work on feature branches</strong></p>
+</div>
+<div class="paragraph">
+<p>For significant changes, create a branch:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout -b feature/skill-building-module</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>3. Review before committing</strong></p>
+</div>
+<div class="paragraph">
+<p>Always review Claude&#8217;s changes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "Show me what you changed in antora.yml"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>4. Commit frequently</strong></p>
+</div>
+<div class="paragraph">
+<p>Make small, logical commits:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "Commit the navigation changes with message 'Add skill-building module to nav'"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>5. Pull before pushing</strong></p>
+</div>
+<div class="paragraph">
+<p>Before pushing your changes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git pull origin main
+git push origin &lt;your-branch&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_undoing_changes"><a class="anchor" href="#_undoing_changes"></a>Undoing Changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If Claude makes unwanted changes:</p>
+</div>
+<div class="paragraph">
+<p><strong>Revert a specific file</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout -- &lt;filename&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Discard all changes</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git reset --hard HEAD</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>git reset --hard</code> discards ALL uncommitted changes. Use carefully.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gitignore_and_claude_code"><a class="anchor" href="#_gitignore_and_claude_code"></a>.gitignore and Claude Code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Claude Code respects <code>.gitignore</code> files. It can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read files in <code>.gitignore</code></p>
+</li>
+<li>
+<p>Help you add patterns to <code>.gitignore</code></p>
+</li>
+<li>
+<p>Avoid creating files that should be ignored</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; "Please add build/ and node_modules/ to .gitignore"</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_whats_next"><a class="anchor" href="#_whats_next"></a>What&#8217;s Next</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the next section, you&#8217;ll learn effective prompting techniques for getting the best results from Claude Code.</p>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="02-skills-vs-prompts.html">Skills vs. Conversational Prompts</a></span>
+  <span class="next"><a href="04-effective-prompting.html">Effective Prompting Techniques</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+<script defer src="../../../_/js/vendor/tabs.js"></script>
+<script defer src="../../../_/js/vendor/reading-time.js"></script>
+  </body>
+</html>
