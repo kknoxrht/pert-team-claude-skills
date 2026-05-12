@@ -36,7 +36,7 @@ If you want to use this repository as a template for a new course:
 [source,bash]
 ----
 # 1. Clone this repository
-git clone https://github.com/YOUR-ORG/pert-team-claude-skills.git my-new-course
+git clone https://github.com/kknoxrht/pert-team-claude-skills.git my-new-course
 cd my-new-course
 
 # 2. Build and serve
@@ -67,9 +67,9 @@ To add progress tracking to an *existing* Antora course using Claude Code:
 ----
 # 1. Install the skill in Claude Code
 cd ~/.claude/skills/
-git clone https://github.com/YOUR-ORG/pert-team-claude-skills.git
+git clone https://github.com/kknoxrht/pert-team-claude-skills.git
 # Or copy just the skill folder:
-cp -r /path/to/pert-team-claude-skills/skills/antora-progress-tracking ~/.claude/skills/
+cp -r https://github.com/kknoxrht/pert-team-claude-skills.git/skills/antora-progress-tracking ~/.claude/skills/
 
 # 2. Navigate to your course
 cd /path/to/your-antora-course
