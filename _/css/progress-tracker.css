@@ -1,0 +1,46 @@
+/**
+ * Visual Progress Tracker Styles
+ * Version: 1.0
+ * Checkmark indicators for visited navigation links
+ */
+
+/* Hide checkmarks by default */
+.nav-progress-mark {
+  display: none;
+  color: #00a86b; /* Success green */
+  font-weight: 700;
+  font-size: 0.9em;
+  margin-right: 0.4em;
+  vertical-align: baseline;
+}
+
+/* Style for visited links */
+.nav-link.is-visited {
+  /* Optional: Add subtle visual indicator beyond checkmark */
+  /* opacity: 0.85; */
+}
+
+/* Current page overrides (ensure current page is prominent) */
+.is-current-page > .nav-link {
+  font-weight: 500; /* Maintains base theme weight */
+}
+
+/* Ensure checkmark aligns properly in flex layout */
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+
+/* Accessibility: Ensure sufficient contrast */
+@media (prefers-color-scheme: dark) {
+  .nav-progress-mark {
+    color: #4ade80; /* Lighter green for dark mode */
+  }
+}
+
+/* Print styles: Hide checkmarks in printed materials */
+@media print {
+  .nav-progress-mark {
+    display: none !important;
+  }
+}
